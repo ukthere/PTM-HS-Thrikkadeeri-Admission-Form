@@ -196,7 +196,17 @@ document.getElementById("form").reset();
 
 function adminLogin(){
 let pass = prompt("Enter Password");
-if(pass === "rajesh@123"){
+const secret = "cmFqZXNoQDEyMw=="; // encoded password
+
+function adminLogin(){
+    let pass = prompt("Enter Password");
+
+    if(btoa(pass) === secret){
+        window.open("admin.html","_blank");
+    }else{
+        alert("Wrong password");
+    }
+}{
 window.open("admin.html","_blank");
 }else{
 alert("Wrong password");
